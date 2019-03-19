@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+
 class FunctionPart {
 public:
     FunctionPart(char new_operation, double new_value) {
