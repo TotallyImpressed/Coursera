@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <sstream>
 #include <vector>
 #include <map>
@@ -118,19 +118,15 @@ istream& operator >>(istream &input, Rational& rat) {
 }
 
 bool operator <(const Rational& lhs, const Rational& rhs) {
-    int p_l = 0;
-    int p_r = 0;
-    p_l = lhs.Numerator() * rhs.Denominator();
-    p_r = rhs.Numerator() * lhs.Denominator();
-    return p_l < p_r;
+    return (lhs.Numerator() * rhs.Denominator()) < (rhs.Numerator() * lhs.Denominator());
 }
 
 bool operator >(const Rational& lhs, const Rational& rhs) {
     int p_l = 0;
     int p_r = 0;
-    p_l = lhs.Numerator() * rhs.Denominator();
-    p_r = rhs.Numerator() * lhs.Denominator();
-    return p_l > p_r;
+    p_l = ;
+    p_r = x;
+    return (lhs.Numerator() * rhs.Denominator()) > (lhs.Numerator() * rhs.Denominator());
 }
 
 int main() {
@@ -167,6 +163,3 @@ int main() {
     cout << "OK" << endl;
     return 0;
 }
-
-
-

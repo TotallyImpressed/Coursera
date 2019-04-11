@@ -102,18 +102,16 @@ ostream& operator <<(ostream &out, const Rational& rat) {
 }
 
 istream& operator >>(istream &input, Rational& rat) {
-    if(input) {
-        int loc_p = 0;
-        int loc_q = 0;
-        input >> loc_p;
-        input.ignore(1);
-        input >> loc_q;
-        if(!loc_p == 0) {
-            Rational loc(loc_p, loc_q);
-            rat.SetFract(loc.Numerator(), loc.Denominator());
-        }
+   if(input) {
+       int loc_p = rat.Numerator();
+       int loc_q = rat.Denominator();
+       input >> loc_p;
+       input.ignore(1);
+       input >> loc_q;
+       Rational loc(loc_p, loc_q);
+       rat.SetFract(loc.Numerator(), loc.Denominator());
     }
-    return input;
+   return input;
 }
 
 int main() {
@@ -155,7 +153,9 @@ int main() {
             return 4;
         }
     }
-
+    Rational r1, r2, r3;
+    cin >> r1 >> r2 >> r3;
+    cout << r1 << " " << r2 << " " << r3 << endl;
     cout << "OK" << endl;
     return 0;
 }
